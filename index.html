@@ -35,8 +35,12 @@
             background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
             padding: 20px;
             border-radius: 10px;
+            width: 90%; /* Make buttons container responsive */
+            max-width: 600px; /* Limit the size on larger screens */
+          /* Allow buttons to wrap on smaller screens */
         }
         .btn {
+            display: block;
             padding: 15px 25px;
             margin: 10px;
             font-size: 18px;
@@ -52,7 +56,17 @@
             background-color: #1ebe52;
         }
         .maps-btn {
+            display: block;
+          
             background-color: #4285F4; /* Google Maps blue */
+        }
+        .maps-btn1 {
+            display: block;
+          
+            background-color: #c52d2d; /* Google Maps blue */
+        }
+        .maps-btn1:hover {
+            background-color: #357ae8;
         }
         .maps-btn:hover {
             background-color: #357ae8;
@@ -73,7 +87,9 @@
     <div id="options">
         <!-- WhatsApp Group Button -->
         <a href="https://chat.whatsapp.com/IicpsdcwS78HbVUoeFprey" target="_blank" class="btn">Join WhatsApp Group</a>
-        
+        <a href="https://www.instagram.com/shubhamclothstore_bansen?igsh=aHZvY3Brdmp6bGp4" target="_blank" class="btn maps-btn1">
+            Instagram
+        </a>
         <!-- Google Maps Directions Button -->
         <a href="https://maps.app.goo.gl/3JRKzmtjQj4T2SwP9" target="_blank" class="btn maps-btn">
             Get Directions

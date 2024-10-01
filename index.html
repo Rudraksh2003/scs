@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Video and Options</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        #videoContainer {
+            display: block;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        #shopVideo {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover; /* Ensures the video covers the entire screen */
+        }
+        #options {
+            display: none; /* Initially hidden */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .btn {
+            padding: 15px 25px;
+            margin: 10px;
+            font-size: 18px;
+            color: white;
+            background-color: #25D366; /* WhatsApp green */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #1ebe52;
+        }
+        .maps-btn {
+            background-color: #4285F4; /* Google Maps blue */
+        }
+        .maps-btn:hover {
+            background-color: #357ae8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fullscreen Video without controls -->
+    <div id="videoContainer">
+        <video id="shopVideo" autoplay muted>
+            <source src="shop.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Buttons Section (Hidden Initially) -->
+    <div id="options">
+        <!-- WhatsApp Group Button -->
+        <a href="https://chat.whatsapp.com/IicpsdcwS78HbVUoeFprey" target="_blank" class="btn">Join WhatsApp Group</a>
+        
+        <!-- Google Maps Directions Button -->
+        <a href="https://maps.app.goo.gl/3JRKzmtjQj4T2SwP9" target="_blank" class="btn maps-btn">
+            Get Directions
+        </a>
+    </div>
+
+    <script>
+        // JavaScript to show buttons after video ends
+        const video = document.getElementById('shopVideo');
+        const options = document.getElementById('options');
+
+        video.addEventListener('ended', function() {
+            // Hide the video container and show the options
+            document.getElementById('videoContainer').style.display = 'none';
+            options.style.display = 'block'; // Show buttons in the center of the screen
+        });
+    </script>
+
+</body>
+</html>
+
